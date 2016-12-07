@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "E7AF0B983FC684C76DBBF3A20C56D712F25006C8",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "A0D71E10255E24A78D99773AFCC282EBC0E4851C" : 0,
+    "E7AF0B983FC684C76DBBF3A20C56D712F25006C8" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "A96B2E32-09EF-4B74-97AD-EBBF79CFECF7",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "A0D71E10255E24A78D99773AFCC282EBC0E4851C" : "",
+    "E7AF0B983FC684C76DBBF3A20C56D712F25006C8" : "TutorCalendar\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "TutorCalendar",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "TutorCalendar.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/gitlab.com\/vsathyan\/TutorCalendar.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A0D71E10255E24A78D99773AFCC282EBC0E4851C"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/gitlab.com\/vsathyan\/TutorCalendar.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E7AF0B983FC684C76DBBF3A20C56D712F25006C8"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15G1004" minimumToolsVersion="Automatic">
+    <entity name="UserProfileObject" representedClassName=".UserProfileObject" syncable="YES">
+        <attribute name="isTutor" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="profileEmail" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="profileID" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="profileName" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="UserProfileObject" positionX="0" positionY="45" width="128" height="105"/>
+    </elements>
+</model>

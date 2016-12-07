@@ -1,0 +1,385 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1F5C2EF01DF494C700B44052 /* UserProfileObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5C2EEF1DF494C700B44052 /* UserProfileObject.swift */; };
+		1FCA66AD1DDE434A00BCB5A3 /* Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCA66AC1DDE434A00BCB5A3 /* Appointment.swift */; };
+		1FCA66AF1DDE448B00BCB5A3 /* PersonAppointments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCA66AE1DDE448B00BCB5A3 /* PersonAppointments.swift */; };
+		511AE7911DDAD2A8004D9EA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511AE7901DDAD2A8004D9EA4 /* AppDelegate.swift */; };
+		511AE7961DDAD2A8004D9EA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 511AE7941DDAD2A8004D9EA4 /* Main.storyboard */; };
+		511AE7991DDAD2A8004D9EA4 /* TutorCalendar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 511AE7971DDAD2A8004D9EA4 /* TutorCalendar.xcdatamodeld */; };
+		511AE79B1DDAD2A8004D9EA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 511AE79A1DDAD2A8004D9EA4 /* Assets.xcassets */; };
+		511AE79E1DDAD2A8004D9EA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 511AE79C1DDAD2A8004D9EA4 /* LaunchScreen.storyboard */; };
+		511AE7A61DDAD6AB004D9EA4 /* AppointmentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511AE7A51DDAD6AB004D9EA4 /* AppointmentTableViewController.swift */; };
+		511AE7A81DDAD6EF004D9EA4 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511AE7A71DDAD6EF004D9EA4 /* CalendarViewController.swift */; };
+		511AE7AA1DDAD751004D9EA4 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511AE7A91DDAD751004D9EA4 /* LaunchViewController.swift */; };
+		511AE7AC1DDAD9A0004D9EA4 /* day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511AE7AB1DDAD9A0004D9EA4 /* day.swift */; };
+		511AE7AE1DDB7792004D9EA4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511AE7AD1DDB7792004D9EA4 /* LoginViewController.swift */; };
+		511AE7B01DDB77E5004D9EA4 /* AddAppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511AE7AF1DDB77E5004D9EA4 /* AddAppointmentViewController.swift */; };
+		511AE7B21DDB780F004D9EA4 /* EditAppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511AE7B11DDB780F004D9EA4 /* EditAppointmentViewController.swift */; };
+		511AE7B61DDBD31C004D9EA4 /* AppointmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511AE7B51DDBD31C004D9EA4 /* AppointmentTableViewCell.swift */; };
+		516ACD131DF5367B00630034 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516ACD121DF5367B00630034 /* ProfileViewController.swift */; };
+		5188EAD81DEA616E00D04816 /* students.json in Resources */ = {isa = PBXBuildFile; fileRef = 5188EAD71DEA616E00D04816 /* students.json */; };
+		51C66F191DE8D4DA00011F47 /* util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C66F181DE8D4DA00011F47 /* util.swift */; };
+		51C66F1B1DE90F8200011F47 /* day_summary.json in Resources */ = {isa = PBXBuildFile; fileRef = 51C66F1A1DE90F8200011F47 /* day_summary.json */; };
+		51C66F1E1DE9162000011F47 /* appointments.json in Resources */ = {isa = PBXBuildFile; fileRef = 51C66F1D1DE9162000011F47 /* appointments.json */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1F5C2EEF1DF494C700B44052 /* UserProfileObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileObject.swift; sourceTree = "<group>"; };
+		1FCA66AC1DDE434A00BCB5A3 /* Appointment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = "<group>"; };
+		1FCA66AE1DDE448B00BCB5A3 /* PersonAppointments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonAppointments.swift; sourceTree = "<group>"; };
+		511AE78D1DDAD2A8004D9EA4 /* TutorCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TutorCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		511AE7901DDAD2A8004D9EA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		511AE7951DDAD2A8004D9EA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		511AE7981DDAD2A8004D9EA4 /* TutorCalendar.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TutorCalendar.xcdatamodel; sourceTree = "<group>"; };
+		511AE79A1DDAD2A8004D9EA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		511AE79D1DDAD2A8004D9EA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		511AE79F1DDAD2A8004D9EA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		511AE7A51DDAD6AB004D9EA4 /* AppointmentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppointmentTableViewController.swift; path = ../AppointmentTableViewController.swift; sourceTree = "<group>"; };
+		511AE7A71DDAD6EF004D9EA4 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		511AE7A91DDAD751004D9EA4 /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
+		511AE7AB1DDAD9A0004D9EA4 /* day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = day.swift; sourceTree = "<group>"; };
+		511AE7AD1DDB7792004D9EA4 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		511AE7AF1DDB77E5004D9EA4 /* AddAppointmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAppointmentViewController.swift; sourceTree = "<group>"; };
+		511AE7B11DDB780F004D9EA4 /* EditAppointmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditAppointmentViewController.swift; sourceTree = "<group>"; };
+		511AE7B51DDBD31C004D9EA4 /* AppointmentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppointmentTableViewCell.swift; path = ../AppointmentTableViewCell.swift; sourceTree = "<group>"; };
+		516ACD121DF5367B00630034 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		5188EAD71DEA616E00D04816 /* students.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = students.json; sourceTree = "<group>"; };
+		51C66F181DE8D4DA00011F47 /* util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = util.swift; sourceTree = "<group>"; };
+		51C66F1A1DE90F8200011F47 /* day_summary.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = day_summary.json; sourceTree = "<group>"; };
+		51C66F1D1DE9162000011F47 /* appointments.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = appointments.json; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		511AE78A1DDAD2A8004D9EA4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		511AE7841DDAD2A8004D9EA4 = {
+			isa = PBXGroup;
+			children = (
+				511AE78F1DDAD2A8004D9EA4 /* TutorCalendar */,
+				511AE78E1DDAD2A8004D9EA4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		511AE78E1DDAD2A8004D9EA4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				511AE78D1DDAD2A8004D9EA4 /* TutorCalendar.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		511AE78F1DDAD2A8004D9EA4 /* TutorCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				1FCA66AC1DDE434A00BCB5A3 /* Appointment.swift */,
+				1FCA66AE1DDE448B00BCB5A3 /* PersonAppointments.swift */,
+				511AE7B51DDBD31C004D9EA4 /* AppointmentTableViewCell.swift */,
+				511AE7A51DDAD6AB004D9EA4 /* AppointmentTableViewController.swift */,
+				511AE7901DDAD2A8004D9EA4 /* AppDelegate.swift */,
+				511AE7941DDAD2A8004D9EA4 /* Main.storyboard */,
+				516ACD121DF5367B00630034 /* ProfileViewController.swift */,
+				511AE7B11DDB780F004D9EA4 /* EditAppointmentViewController.swift */,
+				511AE7AF1DDB77E5004D9EA4 /* AddAppointmentViewController.swift */,
+				511AE7AD1DDB7792004D9EA4 /* LoginViewController.swift */,
+				511AE7A91DDAD751004D9EA4 /* LaunchViewController.swift */,
+				511AE7A71DDAD6EF004D9EA4 /* CalendarViewController.swift */,
+				51C66F181DE8D4DA00011F47 /* util.swift */,
+				511AE79A1DDAD2A8004D9EA4 /* Assets.xcassets */,
+				51C66F1C1DE90FC300011F47 /* SampleData */,
+				511AE7AB1DDAD9A0004D9EA4 /* day.swift */,
+				511AE79C1DDAD2A8004D9EA4 /* LaunchScreen.storyboard */,
+				511AE79F1DDAD2A8004D9EA4 /* Info.plist */,
+				511AE7971DDAD2A8004D9EA4 /* TutorCalendar.xcdatamodeld */,
+				1F5C2EEF1DF494C700B44052 /* UserProfileObject.swift */,
+			);
+			path = TutorCalendar;
+			sourceTree = "<group>";
+		};
+		51C66F1C1DE90FC300011F47 /* SampleData */ = {
+			isa = PBXGroup;
+			children = (
+				5188EAD71DEA616E00D04816 /* students.json */,
+				51C66F1D1DE9162000011F47 /* appointments.json */,
+				51C66F1A1DE90F8200011F47 /* day_summary.json */,
+			);
+			name = SampleData;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		511AE78C1DDAD2A8004D9EA4 /* TutorCalendar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 511AE7A21DDAD2A8004D9EA4 /* Build configuration list for PBXNativeTarget "TutorCalendar" */;
+			buildPhases = (
+				511AE7891DDAD2A8004D9EA4 /* Sources */,
+				511AE78A1DDAD2A8004D9EA4 /* Frameworks */,
+				511AE78B1DDAD2A8004D9EA4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TutorCalendar;
+			productName = TutorCalendar;
+			productReference = 511AE78D1DDAD2A8004D9EA4 /* TutorCalendar.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		511AE7851DDAD2A8004D9EA4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = edu.deanza.darora;
+				TargetAttributes = {
+					511AE78C1DDAD2A8004D9EA4 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 511AE7881DDAD2A8004D9EA4 /* Build configuration list for PBXProject "TutorCalendar" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 511AE7841DDAD2A8004D9EA4;
+			productRefGroup = 511AE78E1DDAD2A8004D9EA4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				511AE78C1DDAD2A8004D9EA4 /* TutorCalendar */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		511AE78B1DDAD2A8004D9EA4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				511AE79E1DDAD2A8004D9EA4 /* LaunchScreen.storyboard in Resources */,
+				51C66F1E1DE9162000011F47 /* appointments.json in Resources */,
+				511AE79B1DDAD2A8004D9EA4 /* Assets.xcassets in Resources */,
+				511AE7961DDAD2A8004D9EA4 /* Main.storyboard in Resources */,
+				51C66F1B1DE90F8200011F47 /* day_summary.json in Resources */,
+				5188EAD81DEA616E00D04816 /* students.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		511AE7891DDAD2A8004D9EA4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				511AE7AE1DDB7792004D9EA4 /* LoginViewController.swift in Sources */,
+				511AE7B21DDB780F004D9EA4 /* EditAppointmentViewController.swift in Sources */,
+				1FCA66AD1DDE434A00BCB5A3 /* Appointment.swift in Sources */,
+				511AE7A81DDAD6EF004D9EA4 /* CalendarViewController.swift in Sources */,
+				51C66F191DE8D4DA00011F47 /* util.swift in Sources */,
+				511AE7AA1DDAD751004D9EA4 /* LaunchViewController.swift in Sources */,
+				511AE7911DDAD2A8004D9EA4 /* AppDelegate.swift in Sources */,
+				511AE7B01DDB77E5004D9EA4 /* AddAppointmentViewController.swift in Sources */,
+				511AE7991DDAD2A8004D9EA4 /* TutorCalendar.xcdatamodeld in Sources */,
+				1FCA66AF1DDE448B00BCB5A3 /* PersonAppointments.swift in Sources */,
+				511AE7B61DDBD31C004D9EA4 /* AppointmentTableViewCell.swift in Sources */,
+				511AE7AC1DDAD9A0004D9EA4 /* day.swift in Sources */,
+				516ACD131DF5367B00630034 /* ProfileViewController.swift in Sources */,
+				511AE7A61DDAD6AB004D9EA4 /* AppointmentTableViewController.swift in Sources */,
+				1F5C2EF01DF494C700B44052 /* UserProfileObject.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		511AE7941DDAD2A8004D9EA4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				511AE7951DDAD2A8004D9EA4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		511AE79C1DDAD2A8004D9EA4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				511AE79D1DDAD2A8004D9EA4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		511AE7A01DDAD2A8004D9EA4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		511AE7A11DDAD2A8004D9EA4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		511AE7A31DDAD2A8004D9EA4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TutorCalendar/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = DeAnza.TutorCalendar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		511AE7A41DDAD2A8004D9EA4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TutorCalendar/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = DeAnza.TutorCalendar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		511AE7881DDAD2A8004D9EA4 /* Build configuration list for PBXProject "TutorCalendar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				511AE7A01DDAD2A8004D9EA4 /* Debug */,
+				511AE7A11DDAD2A8004D9EA4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		511AE7A21DDAD2A8004D9EA4 /* Build configuration list for PBXNativeTarget "TutorCalendar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				511AE7A31DDAD2A8004D9EA4 /* Debug */,
+				511AE7A41DDAD2A8004D9EA4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		511AE7971DDAD2A8004D9EA4 /* TutorCalendar.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				511AE7981DDAD2A8004D9EA4 /* TutorCalendar.xcdatamodel */,
+			);
+			currentVersion = 511AE7981DDAD2A8004D9EA4 /* TutorCalendar.xcdatamodel */;
+			path = TutorCalendar.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 511AE7851DDAD2A8004D9EA4 /* Project object */;
+}

@@ -1,0 +1,40 @@
+ [{
+  "studentID": 1,
+  "studentName": "Dinesh",
+  "facultyID": 2,
+  "facultyName": "Sathya",
+  "scheduleDateTime": "2016-12-02T12:05:00.000Z",
+  "scheduleDate": "2016-12-02",
+  "scheduleTime": "12:05",
+  "title": "Segue Help",
+  "notes": "Notes - 1",
+  "location": "Singapore",
+  "subject": "CIS-55",
+  "role": "Student"
+  }, {
+  "studentID": 1,
+  "studentName": "Dinesh",
+  "facultyID": 4,
+  "facultyName": "Jyothsana",
+  "scheduleDateTime": "2016-12-02T16:05:00.000Z",
+  "scheduleDate": "2016-12-02",
+  "scheduleTime": "16:05",
+  "title": "Sorting - Tables",
+  "notes": "Notes - 7",
+  "location": "Singapore",
+  "subject": "CIS-52",
+  "role": "Student"
+  }, {
+  "studentID": 1,
+  "studentName": "Dinesh",
+  "facultyID": 3,
+  "facultyName": "Quan",
+  "scheduleDateTime": "2016-12-02T18:05:00.000Z",
+  "scheduleDate": "2016-12-02",
+  "scheduleTime": "18:05",
+  "title": "Image Upload",
+  "notes": "Notes - 7",
+  "location": "Singapore",
+  "subject": "CIS-50",
+  "role": "Student"
+  }]
