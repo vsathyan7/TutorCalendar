@@ -113,36 +113,10 @@ class LoginViewController: UIViewController {
        
 
         if (Int(profileIDInput.text!)==nil) {
-             alertMessage("Invalid Id", body: "Student Id is invalid number")
+             alertMessage("Invalid Id", body: "Student Id is invalid")
         }
         else {
                 let idEntered:Int? =  Int(profileIDInput.text!)!
-//                let userData=validLogins.filter({$0.id==idEntered})
-//                
-//                util.debug(2, args: userData.description)
-//                NewProfile.profileID   = Int16(idEntered!)
-//                NewProfile.profileEmail = userData[0].email
-//                NewProfile.profileName = userData[0].name
-//                NewProfile.isTutor      = isTutorInput.on ? true : false
-        
-//                var saveErr :NSError?
-//
-//                do
-//                {
-//                    try managedObjectCTX.save()
-//                    
-//                    // Save this to util class so that it can be used in other places. 
-//                    
-//                    util.studentID=Int(NewProfile.profileID)
-//                    util.isTutor=NewProfile.isTutor
-//                    navigateNext()
-//                    
-//                }catch let error as NSError{
-//                    saveErr = error
-//                    print (saveErr!.localizedDescription)
-//                }
-//
-                // Dinesh please check
                 
                 var matchedUser : Bool = false
                 for counter in 0...(util.completeIDs.count - 1){

@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import UIKit
+
 extension NSDate {
     func startOfMonth() -> NSDate? {
         guard
@@ -304,6 +306,54 @@ class util {
         }).resume()
         return 0
     }
+    
+    static func postImage(route : String, image : UIImage, student_id : Int) -> AnyObject {
+        
+        let url = buildURL(route, payLoad: nil)
+        let request = NSMutableURLRequest(URL: NSURL(string: url)!)
+        request.HTTPMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        let imageData = UIImageJPEGRepresentation(image, 0.9)
+        let base64String = imageData!.base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue: 0)) // encode the image
+        
+//        let err: NSError? = nil
+        let params = ["image":[ "content_type": "image/jpeg", "filename":"\(student_id).jpg", "file_data": base64String]]
+        do {
+        request.HTTPBody = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions(rawValue: 0))
+        }
+        catch {
+            util.debug(1, args: "Error in postImage")
+            return 1
+            
+        }
+        
+        let session = NSURLSession.sharedSession()
+        let task = session.dataTaskWithRequest(request, completionHandler: { data, response, error -> Void in
+            let strData = NSString(data: data!, encoding: NSUTF8StringEncoding)
+            let err: NSError?
+            
+            if let realResponse = response as? NSHTTPURLResponse {
+                util.debug(1, args: realResponse)
+                if realResponse.statusCode == 200 {
+                    util.debug(2, args: "postimage", realResponse)
+                }
+            }
+            else {
+                util.debug(1, args: "postimage", "Not a 200 response")
+                return
+            }
+
+            
+            // process the response
+        })
+        
+        task.resume() // this is needed to start the task
+        
+        return 0
+    }
+
 
     static func debug(level:Int, args:AnyObject?...) {
         if level < 2 {
@@ -323,5 +373,6 @@ class util {
         }
         return nil
     }
+    
     
 }

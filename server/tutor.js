@@ -6,6 +6,7 @@ var sqlite3 = require("sqlite3").verbose();
 var total_days = 42
 
 var mysql      = require('mysql');
+//var fs = require('fs')
 
 function debug(){
     if (debug_level >= arguments[0]){
@@ -494,6 +495,16 @@ app.post('/createStudent', function (req, res) {
                    parseInt(req.body.subject3Rating))
     
 //    res.json(true);
+});
+
+app.post('/imagePost', function (req, res) {
+    debug(1,"imagePost")
+    debug(1,req.body)    
+//    require('fs').writeFile(req.body.filename, req.body.file_data, 'binary', function(err){
+//            if (err) throw err
+//            console.log('File saved.')
+//        })
+    res.json({status: "posted"})
 });
 
 

@@ -86,9 +86,6 @@
                                     <constraint firstAttribute="width" constant="339" id="Tey-bo-7ak"/>
                                     <constraint firstAttribute="height" constant="136" id="mqD-2B-dFD"/>
                                 </constraints>
-                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="31" y="72" width="339" height="136"/>
-                                </variation>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="LogInButton" translatesAutoresizingMaskIntoConstraints="NO" id="RqH-XB-dBC">
                                 <rect key="frame" x="141" y="495" width="319" height="97"/>
@@ -118,6 +115,7 @@
                             <constraint firstItem="Te1-PL-Tau" firstAttribute="top" secondItem="qgY-0H-6Wm" secondAttribute="bottom" constant="8" id="Idl-7H-ctV"/>
                             <constraint firstItem="rvJ-mf-j2y" firstAttribute="top" secondItem="Te1-PL-Tau" secondAttribute="bottom" constant="20" id="N5k-vq-L5t"/>
                             <constraint firstItem="qgY-0H-6Wm" firstAttribute="centerX" secondItem="jnh-Iw-XxY" secondAttribute="centerX" id="NKf-8S-1XY"/>
+                            <constraint firstItem="t7D-SC-9eE" firstAttribute="top" secondItem="87h-pV-xkU" secondAttribute="bottom" constant="52" id="Tht-EJ-oOF"/>
                             <constraint firstItem="k9x-zq-vo6" firstAttribute="centerX" secondItem="jnh-Iw-XxY" secondAttribute="centerX" id="XMy-PZ-sNL"/>
                             <constraint firstItem="JNf-Tm-zBt" firstAttribute="top" secondItem="RqH-XB-dBC" secondAttribute="bottom" constant="20" id="ZjB-rI-d0f"/>
                             <constraint firstItem="qgY-0H-6Wm" firstAttribute="top" secondItem="k9x-zq-vo6" secondAttribute="bottom" constant="13" id="ejR-A6-bqg"/>
@@ -138,6 +136,7 @@
                                 <exclude reference="ZjB-rI-d0f"/>
                                 <exclude reference="ulG-Qj-Hhy"/>
                                 <exclude reference="yTN-bW-N6W"/>
+                                <exclude reference="Tht-EJ-oOF"/>
                                 <exclude reference="gh1-ut-PMv"/>
                             </mask>
                         </variation>
@@ -149,6 +148,7 @@
                                 <include reference="ZjB-rI-d0f"/>
                                 <include reference="ulG-Qj-Hhy"/>
                                 <include reference="yTN-bW-N6W"/>
+                                <include reference="Tht-EJ-oOF"/>
                                 <include reference="gh1-ut-PMv"/>
                             </mask>
                         </variation>
@@ -517,12 +517,6 @@
                                     <rect key="frame" x="0.0" y="64" width="400" height="183"/>
                                 </variation>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" translatesAutoresizingMaskIntoConstraints="NO" id="kU8-d2-xOz">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="140" y="133" width="120" height="120"/>
-                                </variation>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gim-Cw-dfa">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -633,6 +627,7 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="mKg-s5-45U">
                                             <connections>
+                                                <action selector="saveProfileAction:" destination="xOS-MM-cMc" id="I81-TE-xL6"/>
                                                 <segue destination="4c5-h4-ghQ" kind="showDetail" identifier="saveLogin" id="o0N-Fg-chQ"/>
                                             </connections>
                                         </barButtonItem>
@@ -642,12 +637,21 @@
                                     <rect key="frame" x="0.0" y="20" width="374" height="44"/>
                                 </variation>
                             </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8mM-eJ-ZwF">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="person"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="136" y="158" width="102" height="102"/>
+                                </variation>
+                                <connections>
+                                    <action selector="personImageAction:" destination="xOS-MM-cMc" eventType="touchUpInside" id="s06-YC-IMV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="IS4-3f-zQ3"/>
-                                <exclude reference="kU8-d2-xOz"/>
                                 <exclude reference="gim-Cw-dfa"/>
                                 <exclude reference="b39-Cv-qNm"/>
                                 <exclude reference="FCV-cC-A40"/>
@@ -661,12 +665,12 @@
                                 <exclude reference="dO9-1W-nNS"/>
                                 <exclude reference="dtW-Cu-nZK"/>
                                 <exclude reference="zOU-Al-3uk"/>
+                                <exclude reference="8mM-eJ-ZwF"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="IS4-3f-zQ3"/>
-                                <include reference="kU8-d2-xOz"/>
                                 <include reference="gim-Cw-dfa"/>
                                 <include reference="b39-Cv-qNm"/>
                                 <include reference="FCV-cC-A40"/>
@@ -680,6 +684,7 @@
                                 <include reference="dO9-1W-nNS"/>
                                 <include reference="dtW-Cu-nZK"/>
                                 <include reference="zOU-Al-3uk"/>
+                                <include reference="8mM-eJ-ZwF"/>
                             </mask>
                         </variation>
                     </view>
@@ -687,6 +692,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="emailOutlet" destination="QB1-6O-gSw" id="5Ea-tb-gC9"/>
+                        <outlet property="personImageButtonOutlet" destination="8mM-eJ-ZwF" id="dqs-RU-6Ap"/>
                         <outlet property="studentNameOutlet" destination="E0a-VX-BAR" id="U6M-WS-WtY"/>
                         <outlet property="subject1Outlet" destination="16T-sJ-i8k" id="0SO-PJ-NLC"/>
                         <outlet property="subject1RatingOutlet" destination="OB9-l1-C6R" id="XfH-g4-ZDQ"/>

@@ -8,7 +8,8 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate
+ {
 
     @IBOutlet var studentNameOutlet: UITextField!
     @IBOutlet var emailOutlet: UITextField!
@@ -19,6 +20,9 @@ class ProfileViewController: UIViewController {
     @IBOutlet var subject2RatingOutlet: RatingControl!
     @IBOutlet var subject3Outlet: UITextField!
     @IBOutlet var subject3RatingOutlet: RatingControl!
+    @IBOutlet var personImageButtonOutlet: UIButton!
+    var img : UIImageView = UIImageView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -48,11 +52,51 @@ class ProfileViewController: UIViewController {
                           ]
             let payLoad = NSDictionary.init(objects: values, forKeys: keys)
             util.debug(1, args: payLoad)
-            util.postJSON("/createStudent", payLoad: payLoad, completion: {jsonData in util.debug(1, args: "Create Student", jsonData) })
+            util.postJSON("/createStudent", payLoad: payLoad, completion: {jsonData in
+                util.debug(1, args: "Create Student", jsonData)
+                self.alertMessage("Student Id", body: "Student Id is \(jsonData.valueForKey("studentID") as! Int))")
+                let x = util.postImage("/imagePost", image: self.personImageButtonOutlet.imageView!.image!, student_id: jsonData.valueForKey("studentID") as! Int)
+
+            })
 //            util.debug(1, args: studentID)
 
         }
         
+    }
+    
+    func alertMessage(header:String, body:String){
+        
+        let alertController = UIAlertController(title: header, message:
+            body, preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+        self.presentViewController(alertController, animated: true, completion: nil)
+        
+    }
+    
+
+    @IBAction func personImageAction(sender: AnyObject) {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary) {
+            var imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary;
+            imagePicker.allowsEditing = true
+            self.presentViewController(imagePicker, animated: true, completion: nil)
+        }
+        
+    }
+
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
+        util.debug(1, args: "Image picker", image)
+        img.image = image
+        personImageButtonOutlet.setImage(image, forState: .Normal)
+        personImageButtonOutlet.imageView!.layer.cornerRadius = personImageButtonOutlet.imageView!.frame.size.width / 2
+        personImageButtonOutlet.imageView!.clipsToBounds = true
+        personImageButtonOutlet.imageView!.layer.cornerRadius=50.0
+        
+        personImageButtonOutlet.imageView!.layer.borderWidth = 2.0
+        personImageButtonOutlet.imageView!.layer.borderColor = UIColor.whiteColor().CGColor
+
+        self.dismissViewControllerAnimated(true, completion: nil);
     }
 
     /*
