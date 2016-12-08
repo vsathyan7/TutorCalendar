@@ -1,0 +1,18 @@
+Installation Instructions
+MySQL
+    - Install MySQL from mysql.org
+        start MySQL from System Preferences
+    - create a user tutor with password as tutor
+
+Node JS
+    - Install Node JS from nodejs.org
+    - Install packages
+        cd JS
+        npm install
+    - Run Node
+        node tutor
+        - it will start the web server
+        - it will also create tables and setup some startup data
+
+Tutor App
+    - there are four users setup, use any of the IDs to login - 1, 2, 3 or 4; no password needed
