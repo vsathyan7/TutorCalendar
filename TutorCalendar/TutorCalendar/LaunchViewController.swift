@@ -10,6 +10,8 @@ import UIKit
 import CoreData
 
 class LaunchViewController: UIViewController {
+    
+    @IBOutlet var monthNav: UINavigationItem!
     let managedObjectCTX = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     let fetchRequest=NSFetchRequest(entityName: "UserProfileObject")
     
@@ -17,6 +19,8 @@ class LaunchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        monthNav.title = NSDate().fullMonth + ", " + NSDate().year
+//        monthNav.title.
         
         // Do any additional setup after loading the view.
     }
@@ -28,9 +32,12 @@ class LaunchViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        util.debug(1, args: "Button Pressed", segue.identifier)
-        
+        util.debug(1, args: "Prepare for segue in Launch", segue.identifier, segue, segue.sourceViewController)
         if (segue.identifier == "addEvent") && (util.completeOptions.count == 0){
+//            let destVC = segue.destinationViewController as! AddAppointmentViewController
+//            let sourceVC = segue.sourceViewController as! CalendarViewController
+//            util.debug(1, args: sourceVC.days[sourceVC.currentSelectedIndex - 1])
+//            util.debug(1, args: destVC)
             util.completeIDs = []
             util.completeOptions = []
             let keys = ["studentID"]
@@ -51,6 +58,7 @@ class LaunchViewController: UIViewController {
         }
         if (segue.identifier == "reLogin"){
             util.studentID = 0
+            util.currentSelectedDate = NSDate()
             clearStoredValues()
         }
     }

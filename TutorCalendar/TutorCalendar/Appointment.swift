@@ -52,7 +52,7 @@ class Appointment: NSObject {
                       appointment.Details, appointment.LocationName, appointment.Subject, appointment.TimeBlock]
         let payLoad = NSDictionary.init(objects: values as! [String], forKeys: keys)
         util.debug(1, args: payLoad)
-        let _ = util.postJSON("/createAppt", payLoad: payLoad)
+        util.postJSON("/createAppt", payLoad: payLoad, completion: {_ in })
         
     }
     
@@ -69,7 +69,7 @@ class Appointment: NSObject {
                       appointment.Details, appointment.LocationName, appointment.Subject, appointment.TimeBlock]
         let payLoad = NSDictionary.init(objects: values as! [String], forKeys: keys)
         util.debug(1, args: payLoad)
-        let _ = util.postJSON("/createAppt", payLoad: payLoad)
+        util.postJSON("/createAppt", payLoad: payLoad, completion: {_ in })
     }
     
     func deleteAppointment(){

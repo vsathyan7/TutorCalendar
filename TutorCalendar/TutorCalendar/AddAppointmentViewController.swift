@@ -32,19 +32,11 @@ class AddAppointmentViewController: UIViewController, UITableViewDelegate, UITab
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        let keys = ["studentID"]
-//        let values = ["0"]
-//        let payLoad = NSDictionary.init(objects: values , forKeys: keys)
-////        util.debug(2, args: payLoad.allKeys)
-//        
-//        let jsonData = util.getData("/student/", payLoad: payLoad)
-//        util.debug(2, args: jsonData)
         for counter in 0...(util.completeOptions.count - 1){
-//            util.completeOptions.append(jsonData[counter].valueForKey("studentName") as! String)
             autocompleteOptions.append(util.completeOptions[counter])
         }
 
-        apptDateOutlet.text = NSDate().USDateFormat
+        apptDateOutlet.text = util.currentSelectedDate.USDateFormat
         
         inviteeOutlet.delegate = self
         

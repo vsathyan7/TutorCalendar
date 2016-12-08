@@ -50,29 +50,51 @@ function localDateTime(d){
     return (s)
 }
 
-function UpsertStudents(student_id, tutor, name, email, subject_1, subject_2, subject_3) {
-    var update_stmt = "UPDATE  IGNORE students SET student_id = ?, tutor = ?, name = ?, email = ?, " +
-                      "subject_1 = ?, subject_2 = ?, subject_3 = ? where student_id = ?"
-    
+function UpsertStudents(res, student_id, tutor, name, email, subject_1, subject_2, subject_3, 
+                         subject_1_rating, subject_2_rating, subject_3_rating) {
     var db = openDB()
-    db.query({
-      sql: update_stmt,
-      values: [student_id, tutor, name, email, subject_1, subject_2, subject_3, student_id]
-    }, function (error) {
-        debug(2, "update stmt", update_stmt, error)
-    });
-    
-
-    var insert_stmt = "INSERT IGNORE INTO students (student_id, tutor, name, email, subject_1, subject_2, subject_3) " +
-                      "VALUES (?, ?, ?, ?, ?, ?, ?)"
-    
-    db.query({
-      sql: insert_stmt,
-      values: [student_id, tutor, name, email, subject_1, subject_2, subject_3]
-    }, function (error) {
-        debug(2, "insert stmt", insert_stmt, error)
+    debug(1, "Upsert Students - Student ID", student_id, tutor, name, email, subject_1, subject_2, subject_1_rating, subject_2_rating, subject_3_rating)
+    if (student_id == null) {
+        var insert_stmt = "INSERT IGNORE INTO students (tutor, name, email, " +
+                      "subject_1, subject_2, subject_3, subject_1_rating, subject_2_rating, subject_3_rating) " +
+                      "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"
+        db.query({
+          sql: insert_stmt,
+          values: [tutor, name, email, subject_1, subject_2, subject_3,
+                  subject_1_rating, subject_2_rating, subject_3_rating]
+        }, function (error, result) {
+            debug(1, "insert stmt", insert_stmt, error, result.insertId)
+            var jsonResponse = {studentID: result.insertId}
+            debug(1, jsonResponse)
+            return res.json(jsonResponse)
+        });
         
-    });
+    }
+    else {
+        var update_stmt = "UPDATE  IGNORE students SET student_id = ?, tutor = ?, name = ?, email = ?, " +
+                          "subject_1 = ?, subject_2 = ?, subject_3 = ?, " +
+                          "subject_1_rating = ?, subject_2_rating = ?, subject_3_rating = ? " +
+                          "where student_id = ?"
+
+        db.query({
+          sql: update_stmt,
+          values: [student_id, tutor, name, email, subject_1, subject_2, subject_3,
+                  subject_1_rating, subject_2_rating, subject_3_rating, student_id]
+        }, function (error) {
+            debug(2, "update stmt", update_stmt, error)
+        });
+    
+        var insert_stmt = "INSERT IGNORE INTO students (student_id, tutor, name, email, " +
+                      "subject_1, subject_2, subject_3, subject_1_rating, subject_2_rating, subject_3_rating) " +
+                      "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+        db.query({
+          sql: insert_stmt,
+          values: [student_id, tutor, name, email, subject_1, subject_2, subject_3,
+                  subject_1_rating, subject_2_rating, subject_3_rating]
+        }, function (error, result) {
+            debug(1, "insert stmt", insert_stmt, error, result)
+        });
+    }
 
     closeDB(db)
 }
@@ -101,7 +123,7 @@ function UpsertAppt(res, appointment_id, student_id, pfaculty_id, schedule_date,
     });
     closeDB(db)
     if (res != null) {
-        res.json(true)
+        res.json({"processed": true})
     }                
 }
 
@@ -117,7 +139,7 @@ function DeleteAppt(res, appointment_id) {
     });
     closeDB(db)
     if (res != null) {
-        res.json(true)
+        res.json({"processed": true})
     }                    
 }
 
@@ -346,7 +368,11 @@ function closeDB(db){
 }
 function createDB() {
 
-    var student_ddl = "CREATE TABLE IF NOT EXISTS students (student_id Integer AUTO_INCREMENT primary key, tutor boolean, name text, email text, subject_1 text, subject_2 text, subject_3 text)"
+    var student_ddl = "CREATE TABLE IF NOT EXISTS students (student_id Integer AUTO_INCREMENT primary key, " +
+        "tutor boolean, name text, email text, " +
+        "subject_1 text, subject_2 text, subject_3 text, " +
+        "subject_1_rating Integer, subject_2_rating Integer, subject_3_rating Integer " +
+        ")"
     
     var appt_ddl = "CREATE TABLE IF NOT EXISTS appointments (appointment_id integer AUTO_INCREMENT primary key, student_id integer, faculty_id integer, schedule_date DATETIME, title text, notes text, location text, subject text, time_block text, constraint appt_ukey unique (student_id, faculty_id, schedule_date))"
     
@@ -387,10 +413,10 @@ function createDB() {
         UpsertAppt(null, 1, 2, "2016-12-07T15:06:00.000Z", "Thanksgiving Turkey", "Notes - 6", "Singapore", "CIS-58", "DeAnza Lab", "morning")
 
         
-        UpsertStudents(1, 0, "Dinesh", "Dinesh@fhda.edu", "", "", "");
-        UpsertStudents(2, 1, "Sathya", "Sathya@fhda.edu", "CS-55", "CS-66", "");
-        UpsertStudents(3, 0, "Quan", "Quan@fhda.edu", "", "", "");
-        UpsertStudents(4, 1, "Jyothsana", "Jyothsna@fhda.edu", "CS-66", "", "");
+        UpsertStudents(null, 1, 0, "Dinesh", "Dinesh@fhda.edu", "", "", "", 1, 2, 3);
+        UpsertStudents(null, 2, 1, "Sathya", "Sathya@fhda.edu", "CS-55", "CS-66", "", 1, 2, 4);
+        UpsertStudents(null, 3, 0, "Quan", "Quan@fhda.edu", "", "", "", 2, 3, 4);
+        UpsertStudents(null, 4, 1, "Jyothsana", "Jyothsna@fhda.edu", "CS-66", "", "", 3, 2, 5);
 
     
         UpsertDay(1, "2016-11-13", 0, 0, 1);
@@ -456,21 +482,25 @@ app.post('/createAppt', function (req, res) {
 //    res.json(true);
 });
 
+app.post('/createStudent', function (req, res) {
+    debug(1,"createStudent")
+    debug(1,req.body)
+    
+    
+    UpsertStudents(res, null, req.body.tutor == "0", 
+                   req.body.studentName, req.body.studentEmail, 
+                   req.body.subject1, req.body.subject2, req.body.subject3,
+                   parseInt(req.body.subject1Rating), parseInt(req.body.subject2Rating), 
+                   parseInt(req.body.subject3Rating))
+    
+//    res.json(true);
+});
+
+
 app.delete('/deleteAppt', function (req, res) {
     debug(1,"deleteAppt")
     debug(1,req.body)
     DeleteAppt(res, parseInt(req.body.appointmentID))
 //    res.json(true);
 });
-
-app.delete('/quote/:id', function (req, res) {
-    if (quotes.length <= req.params.id) {
-        res.statusCode = 404;
-        return res.send('Error 404: No quote found');
-    }
-
-    quotes.splice(req.params.id, 1);
-    res.json(true);
-});
-
 app.listen(process.env.PORT || 8000);

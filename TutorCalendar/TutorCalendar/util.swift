@@ -136,6 +136,7 @@ class util {
     static var completeOptions = [String]()
     static var completeIDs = [Int]()
     static var isTutor = false
+    static var currentSelectedDate = NSDate()
 
     static func getData(route : String, payLoad : NSDictionary) -> [NSDictionary]
     {
@@ -215,10 +216,11 @@ class util {
         }
         return [NSDictionary()]
     }
-    static func postJSON(route : String, payLoad : NSDictionary?) -> Int{
+    static func postJSON(route : String, payLoad : NSDictionary?, completion: (NSDictionary) -> ()){
         // Setup the session to make REST POST call
         let url = NSURL(string: buildURL(route, payLoad: nil))
         let session = NSURLSession.sharedSession()
+        var returnValue: AnyObject = NSDictionary()
         //        let postParams : [String: AnyObject] = ["hello": "Hello POST world"]
         
         // Create the request
@@ -230,7 +232,9 @@ class util {
             util.debug(2, args: payLoad!)
         } catch {
             util.debug(2, args: "bad things happened")
-            return 401
+            let payLoad = NSDictionary.init(objects: [401], forKeys: ["Status"])
+
+            completion(payLoad)
         }
         
         // Make the POST call and handle it in a completion handler
@@ -244,17 +248,18 @@ class util {
             }
             else {
                 util.debug(2, args: "Not a 200 response")
-                return
+                returnValue = NSDictionary.init(objects: [400], forKeys: ["Status"])
             }
             
             // Read the JSON
-            if let postString = NSString(data:data!, encoding: NSUTF8StringEncoding) as? String {
+            if let postString = NSString(data:data!, encoding: NSUTF8StringEncoding) as? String
+                where error == nil {
                 // Print what we got from the call
-                util.debug(2, args: "POST: " + postString)
+                util.debug(1, args: "POST: " + postString)
+                completion(convertStringToDictionary(postString)!)
             }
             
         }).resume()
-        return 0
     }
 
     static func deleteJSON(route : String, payLoad : NSDictionary?) -> Int{
@@ -307,6 +312,16 @@ class util {
             }
         print("\n")
         }
+    }
+    static func convertStringToDictionary(text: String) -> [String:AnyObject]? {
+        if let data = text.dataUsingEncoding(NSUTF8StringEncoding) {
+            do {
+                return try NSJSONSerialization.JSONObjectWithData(data, options: []) as? [String:AnyObject]
+            } catch let error as NSError {
+                print(error)
+            } catch {return nil}
+        }
+        return nil
     }
     
 }

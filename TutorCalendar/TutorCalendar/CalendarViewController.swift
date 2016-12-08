@@ -57,14 +57,10 @@ class CalendarViewController: UIViewController {
         var dayNumber = 1
         let keys = ["date", "studentID"]
         let values = [currentDate.JSDateFormat, NSString(format: "%d", util.studentID)]
-        var payLoad = NSDictionary.init(objects: values as! [String], forKeys: keys)
-//        util.debug(2, args: payLoad)
+        let payLoad = NSDictionary.init(objects: values as! [String], forKeys: keys)
 
         let jsonData = util.getData("/", payLoad: payLoad)
         
-//        let jsonData = util.getJSON("http://localhost:8000/date/\(currentDate!.JSDateFormat)/studentID/\(studentID)")
-//        util.debug(2, args: "Test Data")
-//        util.debug(2, args: jsonData.count)
         if jsonData.count < numberOfRows {
             print ("Server is down")
         }
@@ -76,8 +72,10 @@ class CalendarViewController: UIViewController {
                 let evening = jsonData[dayNumber - 1].valueForKey("evening_busy") as! Int
                 let afternoon = jsonData[dayNumber - 1].valueForKey("afternoon_busy") as! Int
 
-                let aDay = day(date: currentDate, index: dayNumber, morningBusy: morning >= 1, afternoonBusy: afternoon >= 1, eveningBusy: evening >= 1, selectedDay: false)
-                
+                let aDay = day(date: currentDate, index: dayNumber, morningBusy: morning >= 1, afternoonBusy: afternoon >= 1, eveningBusy: evening >= 1, selectedDay: (currentDate.JSDateFormat == NSDate().JSDateFormat) )
+                if currentDate.JSDateFormat == NSDate().JSDateFormat {
+                    currentSelectedIndex = dayNumber 
+                }
                 let dayButton = UIButton(frame: CGRect(x: buttonX, y: buttonY, width: buttonWidth, height: buttonHeight))
 
                 dayButton.titleLabel?.text = "\(dayNumber)"
@@ -87,7 +85,7 @@ class CalendarViewController: UIViewController {
                 aDay.button = dayButton
                 days += [aDay]
                 
-                self.view.addSubview(days[dayNumber - 1].button)  // myView in this case is the view you want these buttons added
+                self.view.addSubview(days[dayNumber - 1].button)
                 buttonX += buttonWidth
                 dayNumber += 1
                 currentDate = currentDate.addDays(1)!
@@ -103,9 +101,6 @@ class CalendarViewController: UIViewController {
         let index = Int((sender.titleLabel?.text)!)
         
         if sender.titleLabel?.text != nil {
-//            util.debug(2, args: "You have chosen index: \(sender.titleLabel?.text)")
-//            util.debug(2, args: self.description)
-//            util.debug(2, args: self.view.frame.height)
             if currentSelectedIndex > 0 {
                 days[currentSelectedIndex - 1].selectedDay = false
                 days[currentSelectedIndex - 1].image = days[currentSelectedIndex - 1].createImage()
@@ -115,6 +110,7 @@ class CalendarViewController: UIViewController {
             days[currentSelectedIndex - 1].selectedDay = true
             days[currentSelectedIndex - 1].image = days[currentSelectedIndex - 1].createImage()
             days[currentSelectedIndex - 1].button.setImage(days[currentSelectedIndex - 1].image, forState: .Normal)
+            util.currentSelectedDate = days[currentSelectedIndex - 1].date
         
           //Once the the date is clicked, call the registered notification in AppointmentTableViewConrtoller. See viewDidLoad () in AppointmentTableViewConrtoller
             

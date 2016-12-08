@@ -25,6 +25,7 @@
 		511AE7B61DDBD31C004D9EA4 /* AppointmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511AE7B51DDBD31C004D9EA4 /* AppointmentTableViewCell.swift */; };
 		516ACD131DF5367B00630034 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516ACD121DF5367B00630034 /* ProfileViewController.swift */; };
 		5188EAD81DEA616E00D04816 /* students.json in Resources */ = {isa = PBXBuildFile; fileRef = 5188EAD71DEA616E00D04816 /* students.json */; };
+		5189A34D1DF7C3E20056C202 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5189A34C1DF7C3E20056C202 /* RatingControl.swift */; };
 		51C66F191DE8D4DA00011F47 /* util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C66F181DE8D4DA00011F47 /* util.swift */; };
 		51C66F1B1DE90F8200011F47 /* day_summary.json in Resources */ = {isa = PBXBuildFile; fileRef = 51C66F1A1DE90F8200011F47 /* day_summary.json */; };
 		51C66F1E1DE9162000011F47 /* appointments.json in Resources */ = {isa = PBXBuildFile; fileRef = 51C66F1D1DE9162000011F47 /* appointments.json */; };
@@ -51,6 +52,7 @@
 		511AE7B51DDBD31C004D9EA4 /* AppointmentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppointmentTableViewCell.swift; path = ../AppointmentTableViewCell.swift; sourceTree = "<group>"; };
 		516ACD121DF5367B00630034 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		5188EAD71DEA616E00D04816 /* students.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = students.json; sourceTree = "<group>"; };
+		5189A34C1DF7C3E20056C202 /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		51C66F181DE8D4DA00011F47 /* util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = util.swift; sourceTree = "<group>"; };
 		51C66F1A1DE90F8200011F47 /* day_summary.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = day_summary.json; sourceTree = "<group>"; };
 		51C66F1D1DE9162000011F47 /* appointments.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = appointments.json; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				511AE7A51DDAD6AB004D9EA4 /* AppointmentTableViewController.swift */,
 				511AE7901DDAD2A8004D9EA4 /* AppDelegate.swift */,
 				511AE7941DDAD2A8004D9EA4 /* Main.storyboard */,
+				5189A34C1DF7C3E20056C202 /* RatingControl.swift */,
 				516ACD121DF5367B00630034 /* ProfileViewController.swift */,
 				511AE7B11DDB780F004D9EA4 /* EditAppointmentViewController.swift */,
 				511AE7AF1DDB77E5004D9EA4 /* AddAppointmentViewController.swift */,
@@ -198,6 +201,7 @@
 				511AE7B21DDB780F004D9EA4 /* EditAppointmentViewController.swift in Sources */,
 				1FCA66AD1DDE434A00BCB5A3 /* Appointment.swift in Sources */,
 				511AE7A81DDAD6EF004D9EA4 /* CalendarViewController.swift in Sources */,
+				5189A34D1DF7C3E20056C202 /* RatingControl.swift in Sources */,
 				51C66F191DE8D4DA00011F47 /* util.swift in Sources */,
 				511AE7AA1DDAD751004D9EA4 /* LaunchViewController.swift in Sources */,
 				511AE7911DDAD2A8004D9EA4 /* AppDelegate.swift in Sources */,
